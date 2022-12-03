@@ -1,0 +1,162 @@
+/* general selectors */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox*/
+}
+
+*::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari and Opera */
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #f2ea7e;
+  background-image: url("https://transparenttextures.com/patterns/skulls.png");
+}
+
+nav {
+  background-color: #26a653;
+  color: #f2f2f2;
+  padding: 2% 15% 1%;
+  box-shadow: 0 0 10px 0 #0000004d;
+}
+
+a {
+  text-decoration: none;
+  color: #f2f2f2;
+}
+
+/* id selectors */
+#brand {
+  display: inline-block;
+  width: auto;
+  margin-bottom: 5px;
+}
+
+#joy-extra-color {
+  background-color: #f5bf0d;
+}
+
+/* class selectors */
+.links {
+  display: inline-block;
+  position: absolute;
+  margin-top: 5px;
+  right: 15%;
+}
+
+.main-container {
+  display: flex;
+  padding: 0 15%;
+  flex-flow: column;
+  height: 100%;
+}
+
+.container-1 {
+  display: flex;
+  padding: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.emot {
+  text-align: center;
+  padding: 15%;
+  border: none;
+  border-radius: 10%;
+  margin: 20px;
+  color: #f2f2f2;
+  font-weight: bolder;
+  font-size: large;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px #0000004d;
+}
+
+.pain {
+  background-color: #26a653;
+  flex: 0 1 auto;
+}
+
+.question {
+  width: 50px;
+  height: 50px;
+  flex: 0 1 auto;
+}
+
+.joy {
+  background-color: #f5bf0d;
+  flex: 0 1 auto;
+}
+
+.copyright-info {
+  padding: 2% 10%;
+  text-align: center;
+  color: #8b8b8b;
+}
+
+.date-time {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #f2f2f2;
+}
+
+.records {
+  position: relative;
+  padding: 10%;
+  color: #f2f2f2;
+}
+
+.add-pain {
+  position: absolute;
+  right: 18px;
+  color: #f2f2f2;
+  background-color: #26a653;
+}
+
+.add-joy {
+  position: absolute;
+  right: 18px;
+  color: #f2f2f2;
+  background-color: #f5bf0d;
+}
+
+/* combinator selectors, pseudo-selectors and more */
+button:hover {
+  opacity: 80%;
+  box-shadow: 0 1px 1px #0000004d;
+}
+
+button:active {
+  opacity: 100%;
+  box-shadow: none;
+}
+
+a:hover {
+  color: #f2ea7e;
+}
+
+/* needs more study */
+a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f2ea7e;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

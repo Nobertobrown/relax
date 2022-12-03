@@ -1,0 +1,59 @@
+form.form-control {
+  position: relative;
+  width: 70%;
+  margin: 30px auto 20px auto;
+  background: #f2f2f2;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px #8a8989;
+}
+form.form-control input,
+form.form-control textarea {
+  width: 100%;
+  border: none;
+  padding: 9px;
+  outline: none;
+  font-size: 1.2rem;
+  font-family: inherit;
+  resize: none;
+  background-color: #f2f2f2;
+}
+
+form.form-control input {
+  margin-bottom: 2px;
+}
+
+form.form-control input:focus,
+form.form-control textarea:focus {
+  z-index: 1;
+  box-shadow: 1px 1px 3px #00000017;
+}
+
+form.form-control button,
+.add-pain,
+.add-joy {
+  bottom: 8px;
+  border: none;
+  border-radius: 10%;
+  height: 36px;
+  box-shadow: 1px 1px 4px #0000004d;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+}
+
+.form-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+form.form-control button[type="submit"] {
+  margin-left: 5px;
+  color: #f2f2f2;
+  background-color: #26a653;
+}
+
+form.form-control button[type="reset"] {
+  color: #8b8b8b;
+  background: #f2f2f2;
+}
