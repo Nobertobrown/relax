@@ -127,6 +127,14 @@ a {
   background-color: #f5bf0d;
 }
 
+.o4 {
+  font-weight: bold;
+  font-size: 2rem;
+  padding-top: 5%;
+  padding-bottom: 35%;
+  color: #8b8b8b;
+}
+
 /* combinator selectors, pseudo-selectors and more */
 button:hover {
   opacity: 80%;
@@ -142,7 +150,6 @@ a:hover {
   color: #f2ea7e;
 }
 
-/* needs more study */
 a:after {
   content: "";
   position: absolute;
@@ -152,11 +159,11 @@ a:after {
   bottom: 0;
   left: 0;
   background-color: #f2ea7e;
-  transform-origin: bottom right;
+  transform-origin: bottom;
   transition: transform 0.25s ease-out;
 }
 
 a:hover:after {
   transform: scaleX(1);
-  transform-origin: bottom left;
+  transform-origin: bottom;
 }
