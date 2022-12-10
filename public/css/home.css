@@ -1,0 +1,120 @@
+/* general selectors */
+nav {
+  background-color: transparent;
+  color: #26a653;
+  box-shadow: none;
+}
+
+/* id selectors */
+
+/* class selectors */
+.sign-in {
+  color: #26a653;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  padding: 5% 0;
+  align-items: center;
+}
+
+.hero-words {
+  color: #000000;
+}
+
+.hero-term {
+  display: inline-block;
+  color: #8b8b8b;
+  animation: rotate 1.5s linear 0s infinite alternate;
+}
+
+.act {
+  display: inline-block;
+  color: #26a653;
+  animation: rotate 1.3s linear 0.5s infinite alternate-reverse;
+}
+
+.delight {
+  display: inline-block;
+  color: #f5bf0d;
+  animation: rotate 1.3s linear 1s infinite alternate;
+}
+
+.hero-img {
+  width: 400px;
+  animation: float 2s ease-in-out 1s infinite alternate;
+  flex: 0 1;
+}
+
+.hero-btn {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #26a653;
+  border: none;
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 10px;
+  width: 135px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+/* combinator selectors, pseudo-selectors and more */
+li a {
+  color: #8b8b8b;
+}
+
+li a:hover {
+  color: inherit;
+}
+
+li a:after {
+  width: 0;
+}
+
+.hero-btn span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.hero-btn span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.hero-btn:hover span {
+  padding-right: 20px;
+}
+
+.hero-btn:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+/* animations */
+@keyframes rotate {
+  from {
+    transform: rotate(2deg);
+  }
+  to {
+    transform: rotate(-2deg);
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}

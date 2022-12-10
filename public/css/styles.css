@@ -18,6 +18,7 @@ html {
 body {
   background-color: #f2ea7e;
   background-image: url("https://transparenttextures.com/patterns/skulls.png");
+  font-size: 1.2rem;
 }
 
 nav {
@@ -25,6 +26,9 @@ nav {
   color: #f2f2f2;
   padding: 2% 15% 1%;
   box-shadow: 0 0 10px 0 #0000004d;
+  display: flex;
+  align-items: center;
+  flex: 1 1;
 }
 
 a {
@@ -35,8 +39,10 @@ a {
 /* id selectors */
 #brand {
   display: inline-block;
+  font-size: 2rem;
   width: auto;
   margin-bottom: 5px;
+  margin-right: auto;
 }
 
 #joy-extra-color {
@@ -45,10 +51,7 @@ a {
 
 /* class selectors */
 .links {
-  display: inline-block;
-  position: absolute;
-  margin-top: 5px;
-  right: 15%;
+  display: flex;
 }
 
 .main-container {
@@ -132,12 +135,12 @@ a {
   font-size: 2rem;
   padding-top: 5%;
   padding-bottom: 35%;
-  color: #8b8b8b;
+  color: #000000;
 }
 
 /* combinator selectors, pseudo-selectors and more */
 button:hover {
-  opacity: 80%;
+  opacity: 90%;
   box-shadow: 0 1px 1px #0000004d;
 }
 
@@ -146,11 +149,22 @@ button:active {
   box-shadow: none;
 }
 
+nav ul {
+  list-style: none;
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+li a {
+  position: relative;
+}
+
 a:hover {
   color: #f2ea7e;
 }
 
-a:after {
+li a:after {
   content: "";
   position: absolute;
   width: 100%;
@@ -159,11 +173,11 @@ a:after {
   bottom: 0;
   left: 0;
   background-color: #f2ea7e;
-  transform-origin: bottom;
+  /* transform-origin: bottom right; */
   transition: transform 0.25s ease-out;
 }
 
-a:hover:after {
+li a:hover:after {
   transform: scaleX(1);
-  transform-origin: bottom;
+  /* transform-origin: bottom left; */
 }

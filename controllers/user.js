@@ -3,6 +3,18 @@ const Directory = require("../util/path");
 const rootDir = Directory.rootDir;
 const Record = require("../models/records");
 
+exports.getLandingPage = (req, res) => {
+  res.sendFile(path.join(rootDir, "views", "home.html"));
+};
+
+exports.getLoginPage = (req, res) => {
+  res.sendFile(path.join(rootDir, "views", "login.html"));
+};
+
+exports.getSignUpPage = (req, res) => {
+  res.sendFile(path.join(rootDir, "views", "sign-up.html"));
+};
+
 exports.getHomePage = (req, res) => {
   res.sendFile(path.join(rootDir, "views", "main.html"));
 };

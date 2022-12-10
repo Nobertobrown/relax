@@ -36,7 +36,8 @@ form.form-control button,
   border: none;
   border-radius: 10%;
   height: 36px;
-  box-shadow: 1px 1px 4px #0000004d;
+  width: 66px;
+  box-shadow: 2px 2px 4px #0000004d;
   cursor: pointer;
   outline: none;
   padding: 10px;
@@ -56,4 +57,8 @@ form.form-control button[type="submit"] {
 form.form-control button[type="reset"] {
   color: #8b8b8b;
   background: #f2f2f2;
+}
+
+form.form-control button:active {
+  box-shadow: 1px 1px 2px #0000004d;
 }

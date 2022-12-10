@@ -4,34 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Records</title>
+    <title>Relax</title>
     <link rel="stylesheet" href="/css/styles.css" />
     <link rel="stylesheet" href="/css/form.css" />
+    <link rel="stylesheet" href="/css/home.css" />
   </head>
   <body>
     <header>
       <nav>
         <h1 id="brand">Relax</h1>
-        <ul class="links">
-          <li><a href="/">Home</a></li>
-        </ul>
       </nav>
     </header>
 
     <div class="main-container">
-      <div class="container-1">
-        <div class="records pain">
-          <div><h1>Pains</h1></div>
-          <div>List of pains...</div>
-
-          <button class="add-pain" onclick="location.href='/pain'">Add</button>
-        </div>
-
-        <div class="records joy">
-          <div><h1>Joys</h1></div>
-          <div>List of joys...</div>
-          <button class="add-joy" onclick="location.href='/joy'">Add</button>
-        </div>
+      <div class="">
+        <form action="/sign-up" class="form-control" method="post">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username" />
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" />
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password" />
+          <button type="submit">Login</button>
+        </form>
       </div>
 
       <div class="copyright-info">
