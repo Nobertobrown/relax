@@ -17,15 +17,25 @@
     </header>
 
     <div class="main-container">
-      <div class="">
-        <form action="/sign-up" class="form-control" method="post">
-          <label for="username">Username</label>
-          <input type="text" name="username" id="username" />
-          <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" />
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" />
-          <button type="submit">Login</button>
+      <div class="form-container">
+        <form action="/login" class="form-style" method="post">
+          <p class="top-right">
+            Not a member? <a href="/sign-up">Sign up now</a>
+          </p>
+          <h2>Sign In to Relax</h2>
+          <div class="inner-column">
+            <div>
+              <label for="username">Username or Email Address</label>
+              <input type="text" name="username&email" id="username&email" />
+            </div>
+
+            <div>
+              <label for="password">Password</label>
+              <input type="password" name="password" id="password" />
+            </div>
+          </div>
+
+          <button type="submit">Sign In</button>
         </form>
       </div>
 
