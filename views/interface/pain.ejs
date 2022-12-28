@@ -1,0 +1,38 @@
+<%- include('../includes/header') -%>
+    <link rel="stylesheet" href="/css/form.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 id="brand">Pain</h1>
+        <div class="top-nav-info">
+          <div class="date-time"><em>Date...</em></div>
+          <q
+            ><em
+              >Breath, buddy. This is just a chapter, not your whole story.</em
+            ></q
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div>
+        <form action="/records/pain" method="post" class="form-control">
+          <input type="text" name="title" placeholder="What's the matter?" />
+          <textarea
+            name="description"
+            cols="30"
+            rows="10"
+            placeholder="Tell me more..."
+          >
+          </textarea>
+          <div class="form-buttons">
+            <button type="submit" name="button" value="pain">Keep</button>
+            <button type="reset">Discard</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

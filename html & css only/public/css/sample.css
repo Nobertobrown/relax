@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+div {
+  padding: 5%;
+  margin-bottom: 1.2rem;
+}
+
+.main-container{
+  display: flex;
+  align-items: center;
+}
+
+.fst-child {
+  background-image: repeating-linear-gradient(
+    to bottom right,
+    rgb(38, 166, 83, 0.9),
+    rgb(245, 191, 15),
+    rgb(245, 191, 15, 0.1)
+  );
+}
+
+.sec-child {
+  background-image: radial-gradient(rgb(38, 166, 83), rgb(245, 191, 15));
+}

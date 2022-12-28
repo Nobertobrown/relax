@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Records</title>
-    <link rel="stylesheet" href="/css/styles.css" />
+<%- include('../includes/header') -%>
     <link rel="stylesheet" href="/css/form.css" />
   </head>
   <body>
@@ -19,17 +12,26 @@
     </header>
 
     <div class="main-container">
-      <div class="container-1">
+      <div class="container-1 records-container-1">
         <div class="records pain">
           <div><h1>Pains</h1></div>
-          <div>List of pains...</div>
-
+          <form>
+                <% painList.forEach((pain)=>{ %>
+                  <h3><%= pain.title %></h3>
+                  <p><%= pain.description %></p>
+                <% }) %>
+          </form>
           <button class="add-pain" onclick="location.href='/pain'">Add</button>
         </div>
 
         <div class="records joy">
           <div><h1>Joys</h1></div>
-          <div>List of joys...</div>
+          <form>
+            <% joyList.forEach((joy)=>{ %>
+              <h3><%= joy.title %></h3>
+              <p><%= joy.description %></p>
+            <% }) %>
+          </form>
           <button class="add-joy" onclick="location.href='/joy'">Add</button>
         </div>
       </div>
@@ -38,5 +40,7 @@
         <p>ⓒ 2022 noberto,Inc. All rights reserved</p>
       </div>
     </div>
+
+    <script src="/js/index.js"></script>
   </body>
 </html>

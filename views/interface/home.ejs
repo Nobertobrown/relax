@@ -1,0 +1,38 @@
+<%- include('../includes/header') -%>
+    <link rel="stylesheet" href="/css/home.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <h1 id="brand">Relax</h1>
+        <ul class="links">
+          <li><a class="sign-in" href="/login">Sign In</a></li>
+          <li><a href="/sign-up">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div class="main-container">
+      <div class="hero">
+        <div class="hero-words">
+          <h1>
+            Be your own
+            <div class="hero-term">hero.</div>
+            <br />Act on your
+            <div class="act">problems,</div>
+            <br />Delight in your
+            <div class="delight">successes</div>
+          </h1>
+          <button class="hero-btn" onclick="location.href='/sign-up'">
+            <span>Sign Up</span>
+          </button>
+        </div>
+        <img class="hero-img" src="/images/mind.png" alt="peace of mind" />
+      </div>
+
+      <div class="copyright-info">
+        <p>ⓒ 2022 noberto,Inc. All rights reserved</p>
+      </div>
+    </div>
+  </body>
+</html>
