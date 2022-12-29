@@ -1,46 +1,55 @@
 <%- include('../includes/header') -%>
-    <link rel="stylesheet" href="/css/form.css" />
-  </head>
-  <body>
-    <header>
-      <nav id="joy-extra-color">
-        <h1 id="brand">Joy</h1>
-        <div class="top-nav-info">
-          <div class="date-time"><em>Date...</em></div>
-          <q
-            ><em
-              >...Find out where joy resides, and give it a voice far beyond
-              singing. For to miss the joy is to miss all.</em
-            ></q
-          >
-        </div>
-      </nav>
-    </header>
-
-    <main>
-      <div>
-        <form action="/records/joy" method="post" class="form-control">
-          <input type="text" name="title" placeholder="What's on your mind?" />
-          <textarea
-            name="description"
-            cols="30"
-            rows="10"
-            placeholder="Tell me more..."
-          >
-          </textarea>
-          <div class="form-buttons">
-            <button
-              type="submit"
-              name="button"
-              id="joy-extra-color"
-              value="joy"
-            >
-              Keep
-            </button>
-            <button type="reset">Discard</button>
-          </div>
-        </form>
+<link rel="stylesheet" href="/css/form.css" />
+</head>
+<body>
+  <header>
+    <nav id="joy-extra-color">
+      <h1 id="brand">Joy</h1>
+      <div class="top-nav-info">
+        <div class="date-time"><em>Date...</em></div>
+        <q
+          ><em
+            >...Find out where joy resides, and give it a voice far beyond
+            singing. For to miss the joy is to miss all.</em
+          ></q
+        >
       </div>
-    </main>
-  </body>
+    </nav>
+  </header>
+
+  <main>
+    <div>
+      <form
+        action="<% if(editing){ %> /edit-joy <% }else{ %> /records/joy <% } %>"
+        method="post"
+        class="form-control"
+      >
+        <input
+          type="text"
+          name="title"
+          placeholder="What's on your mind?"
+          value="<% if(editing){ %> <%= joyRec.title %> <% } %>"
+        />
+        <textarea
+          name="description"
+          cols="30"
+          rows="10"
+          placeholder="Tell me more..."
+        >
+          <% if(editing){ %> <%= joyRec.description %> <% } %>
+          </textarea
+        >
+        <% if (editing) { %>
+          <input type="hidden" name="joyId" value="<%= joyRec.id %>" />
+        <% } %>
+        <div class="form-buttons">
+          <button type="submit" name="button" id="joy-extra-color" value="joy">
+            <% if(editing){ %> Update <% }else{ %> Keep <% } %>
+          </button>
+          <button type="reset">Discard</button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
 </html>

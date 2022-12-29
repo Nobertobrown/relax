@@ -18,7 +18,7 @@ exports.getHomePage = (req, res) => {
 };
 
 exports.getPainForm = (req, res) => {
-  res.render("interface/pain", { pageTitle: "Pain" });
+  res.render("interface/pain", { pageTitle: "Pain", editing: false });
 };
 
 exports.postPain = (req, res) => {
@@ -41,8 +41,44 @@ exports.postPain = (req, res) => {
     });
 };
 
+exports.getEditPain = (req, res) => {
+  const painId = req.params.painId;
+  const editMode = req.query.edit;
+  Record.findByPk(painId)
+    .then((painRec) => {
+      res.render("interface/pain", {
+        pageTitle: "Edit:Pain",
+        painRec: painRec,
+        editing: editMode,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+exports.postEditPain = (req, res) => {
+  const painId = req.body.painId;
+  const updatedTitle = req.body.title;
+  const updatedDescription = req.body.description;
+
+  Record.findByPk(painId)
+    .then((pain) => {
+      pain.title = updatedTitle;
+      pain.description = updatedDescription;
+      return pain.save();
+    })
+    .then((result) => {
+      console.log("Updated Record!");
+      res.redirect("/records");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
 exports.getJoyForm = (req, res) => {
-  res.render("interface/joy", { pageTitle: "Joy" });
+  res.render("interface/joy", { pageTitle: "Joy", editing: false });
 };
 
 exports.postJoy = (req, res) => {
@@ -58,6 +94,42 @@ exports.postJoy = (req, res) => {
   })
     .then((result) => {
       console.log("Joy Record Created!");
+      res.redirect("/records");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+exports.getEditJoy = (req, res) => {
+  const joyId = req.params.joyId;
+  const editMode = req.query.edit;
+  Record.findByPk(joyId)
+    .then((joyRec) => {
+      res.render("interface/joy", {
+        pageTitle: "Edit:Joy",
+        joyRec: joyRec,
+        editing: editMode,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+exports.postEditJoy = (req, res) => {
+  const joyId = req.body.joyId;
+  const updatedTitle = req.body.title;
+  const updatedDescription = req.body.description;
+
+  Record.findByPk(joyId)
+    .then((joy) => {
+      joy.title = updatedTitle;
+      joy.description = updatedDescription;
+      return joy.save();
+    })
+    .then((result) => {
+      console.log("Updated Record!");
       res.redirect("/records");
     })
     .catch((err) => {
@@ -83,4 +155,19 @@ exports.getRecords = async (req, res) => {
     painList: pains,
     joyList: joys,
   });
+};
+
+exports.postDeleteProduct = (req, res) => {
+  const recordId = req.body.recordId;
+  Record.findByPk(recordId)
+    .then((record) => {
+      return record.destroy();
+    })
+    .then((result) => {
+      console.log("Destroyed Record!");
+      res.redirect("/records");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };

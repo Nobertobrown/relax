@@ -74,7 +74,7 @@ h2 {
 
 .records-container-1 {
   align-items: stretch;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
 }
 
 .emot {
@@ -125,9 +125,9 @@ h2 {
 }
 
 .records {
-  display: flex;
-  flex-flow: column;
-  border-radius: 7px;
+  /* display: flex;
+  flex-flow: column; */
+  /* border-radius: 7px; */
   position: relative;
   padding: 10%;
   color: #f2f2f2;

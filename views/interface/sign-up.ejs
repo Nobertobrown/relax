@@ -1,54 +1,52 @@
 <%- include('../includes/header') -%>
-    <link rel="stylesheet" href="/css/form.css" />
-    <link rel="stylesheet" href="/css/home.css" />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <h1 id="brand">Relax</h1>
-      </nav>
-    </header>
+<link rel="stylesheet" href="/css/form.css" />
+<link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 id="brand">Relax</h1>
+    </nav>
+  </header>
 
-    <div class="main-container">
-      <div class="form-container">
-        <form action="/sign-up" class="form-style" method="post">
-          <p class="top-right">
-            Already a member? <a href="/login">Sign In</a>
-          </p>
-          <h2>Sign Up to Relax</h2>
-          <div class="row">
-            <div class="column">
-              <label for="name">Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div class="column">
-              <label for="username">Username</label>
-              <input type="text" name="username" id="username" />
-            </div>
+  <div class="main-container">
+    <div class="form-container">
+      <form action="/sign-up" class="form-style" method="post">
+        <p class="top-right">Already a member? <a href="/login">Sign In</a></p>
+        <h2>Sign Up to Relax</h2>
+        <div class="row">
+          <div class="column">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" />
           </div>
-
-          <div>
-            <label for="email">E-mail</label>
-            <input type="email" name="email" id="email" />
+          <div class="column">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" />
           </div>
+        </div>
 
-          <div>
-            <label for="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="6+ characters"
-            />
-          </div>
+        <div>
+          <label for="email">E-mail</label>
+          <input type="email" name="email" id="email" />
+        </div>
 
-          <button type="submit">Sign Up</button>
-        </form>
-      </div>
+        <div>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="6+ characters"
+          />
+        </div>
 
-      <div class="copyright-info">
-        <p>ⓒ 2022 noberto,Inc. All rights reserved</p>
-      </div>
+        <button type="submit">Sign Up</button>
+      </form>
     </div>
-  </body>
+
+    <div class="copyright-info">
+      <p>ⓒ 2022 noberto,Inc. All rights reserved</p>
+    </div>
+  </div>
+</body>
 </html>
