@@ -6,11 +6,11 @@ exports.getLandingPage = (req, res) => {
 };
 
 exports.getLoginPage = (req, res) => {
-  res.render("interface/login", { pageTitle: "Login" });
+  res.render("auth/login", { pageTitle: "Login" });
 };
 
 exports.getSignUpPage = (req, res) => {
-  res.render("interface/sign-up", { pageTitle: "Sign-up" });
+  res.render("auth/sign-up", { pageTitle: "Sign-up" });
 };
 
 exports.getHomePage = (req, res) => {
@@ -27,11 +27,12 @@ exports.postPain = (req, res) => {
   const type = req.body.button;
   // const record = new Record(title, description);
   // record.save();
-  Record.create({
-    title: title,
-    description: description,
-    recordType: type,
-  })
+  req.user
+    .createRecord({
+      title: title,
+      description: description,
+      recordType: type,
+    })
     .then((result) => {
       console.log("Pain Record Created!");
       res.redirect("/records");
@@ -87,11 +88,12 @@ exports.postJoy = (req, res) => {
   const type = req.body.button;
   // const record = new Record(title, description);
   // record.save();
-  Record.create({
-    title: title,
-    description: description,
-    recordType: type,
-  })
+  req.user
+    .createRecord({
+      title: title,
+      description: description,
+      recordType: type,
+    })
     .then((result) => {
       console.log("Joy Record Created!");
       res.redirect("/records");
@@ -138,13 +140,13 @@ exports.postEditJoy = (req, res) => {
 };
 
 exports.getRecords = async (req, res) => {
-  const joys = await Record.findAll({
+  const joys = await req.user.getRecords({
     where: {
       recordType: "joy",
     },
   });
 
-  const pains = await Record.findAll({
+  const pains = await req.user.getRecords({
     where: {
       recordType: "pain",
     },

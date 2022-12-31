@@ -1,12 +1,17 @@
 const express = require("express");
 const userController = require("../controllers/user");
+const authController = require("../controllers/auth");
 const router = express.Router();
 
 router.get("/landing", userController.getLandingPage);
 
 router.get("/login", userController.getLoginPage);
 
+router.post("/login", authController.postLoginPage);
+
 router.get("/sign-up", userController.getSignUpPage);
+
+router.post("/sign-up", authController.postSignUpPage);
 
 router.get("/", userController.getHomePage);
 
