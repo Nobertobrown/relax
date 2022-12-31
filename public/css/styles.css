@@ -53,6 +53,10 @@ h2 {
   background-color: #f5bf0d;
 }
 
+#signOutForm{
+  cursor: pointer;
+}
+
 /* class selectors */
 .links {
   display: flex;

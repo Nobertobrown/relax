@@ -5,6 +5,8 @@ const router = express.Router();
 
 router.get("/landing", userController.getLandingPage);
 
+router.post("/landing", userController.postLandingPage);
+
 router.get("/login", userController.getLoginPage);
 
 router.post("/login", authController.postLoginPage);

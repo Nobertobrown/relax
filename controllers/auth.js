@@ -1,4 +1,4 @@
-const { Op,where } = require("sequelize");
+const { Op, where } = require("sequelize");
 const User = require("../models/user");
 const bcrypt = require("bcrypt");
 
@@ -53,7 +53,12 @@ exports.postLoginPage = (req, res) => {
         .compare(password, user.password)
         .then((doMatch) => {
           if (doMatch) {
-            return res.redirect("/");
+            req.session.isLoggedIn = true;
+            req.session.user = user;
+            return req.session.save((err) => {
+              console.log(err);
+              res.redirect("/");
+            });
           }
           res.redirect("/login");
         })

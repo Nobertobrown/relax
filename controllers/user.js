@@ -5,6 +5,13 @@ exports.getLandingPage = (req, res) => {
   res.render("interface/home", { pageTitle: "Relax" });
 };
 
+exports.postLandingPage = (req, res) => {
+  req.session.destroy((err) => {
+    console.log(err);
+    res.redirect("/landing");
+  });
+};
+
 exports.getLoginPage = (req, res) => {
   res.render("auth/login", { pageTitle: "Login" });
 };
