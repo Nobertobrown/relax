@@ -2,17 +2,23 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const userRoutes = require("./routes/routes");
-const errorRoutes = require("./controllers/error");
-const sequelize = require("./util/database");
-const Record = require("./models/records");
-const User = require("./models/user");
 const { DataTypes, Sequelize } = require("sequelize");
 const pg = require("pg");
 const session = require("express-session");
 const pgSession = require("connect-pg-simple")(session);
+const csrf = require("csurf");
+const flash = require("connect-flash");
+/******** importing routes *******/
+const userRoutes = require("./routes/routes");
+const errorRoutes = require("./controllers/error");
+/******** importing sequelize instance *******/
+const sequelize = require("./util/database");
+/******** importing models *******/
+const Record = require("./models/records");
+const User = require("./models/user");
 
 const app = express(); // initialization
+const csrfProtection = csrf();
 
 /******** defining middlewares *******/
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -41,6 +47,9 @@ app.use(
   })
 );
 
+app.use(csrfProtection);
+app.use(flash());
+
 app.use((req, res, next) => {
   if (!req.session.user) {
     return next();
@@ -54,6 +63,12 @@ app.use((req, res, next) => {
       console.log(err);
     });
 });
+
+app.use((req, res, next) => {
+  res.locals.csrfToken = req.csrfToken();
+  next();
+});
+
 app.use(userRoutes);
 app.use(errorRoutes.get404);
 

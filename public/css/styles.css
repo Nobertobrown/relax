@@ -159,6 +159,19 @@ h2 {
   color: #000000;
 }
 
+.div--message{
+  padding: 1rem;
+  border: 1px solid #26a653;
+  background-color: #26a653b7;
+  margin: auto;
+  border-radius: 7px;
+}
+
+.div--message--error{
+  border-color: red;
+  background-color: #ff0000a2;
+}
+
 /* combinator selectors, pseudo-selectors and more */
 button:hover {
   opacity: 90%;

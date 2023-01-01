@@ -47,6 +47,7 @@ exports.postLoginPage = (req, res) => {
   })
     .then((user) => {
       if (!user) {
+        req.flash("loginError", "Invalid e-mail or password!");
         return res.redirect("/login");
       }
       bcrypt
@@ -60,6 +61,7 @@ exports.postLoginPage = (req, res) => {
               res.redirect("/");
             });
           }
+          req.flash("loginError", "Invalid e-mail or password!");
           res.redirect("/login");
         })
         .catch((err) => {

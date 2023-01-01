@@ -13,7 +13,16 @@ exports.postLandingPage = (req, res) => {
 };
 
 exports.getLoginPage = (req, res) => {
-  res.render("auth/login", { pageTitle: "Login" });
+  let message = req.flash("loginError");
+  if (message.length > 0) {
+    message = message[0];
+  } else {
+    message = null;
+  }
+  res.render("auth/login", {
+    pageTitle: "Login",
+    errorMessage: message,
+  });
 };
 
 exports.getSignUpPage = (req, res) => {
