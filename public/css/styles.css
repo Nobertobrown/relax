@@ -40,6 +40,10 @@ h2 {
   font-size: 1.8rem;
 }
 
+i.fa-trash{
+  color: red;
+}
+
 /* id selectors */
 #brand {
   display: inline-block;
@@ -53,7 +57,7 @@ h2 {
   background-color: #f5bf0d;
 }
 
-#signOutForm{
+#signOutForm {
   cursor: pointer;
 }
 
@@ -159,7 +163,25 @@ h2 {
   color: #000000;
 }
 
-.div--message{
+.o5 {
+  font-weight: bold;
+  font-size: 1rem;
+  padding-top: 5%;
+  padding-bottom: 35%;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
+
+.o5 a{
+  color: #8b8b8b;
+}
+
+.o5 a:hover{
+  color: #26a653;
+}
+
+.div--message {
   padding: 1rem;
   border: 1px solid #26a653;
   background-color: #26a653b7;
@@ -167,9 +189,27 @@ h2 {
   border-radius: 7px;
 }
 
-.div--message--error{
+.div--message--error {
   border-color: red;
   background-color: #ff0000a2;
+}
+
+.div--password--confirm {
+  position: relative;
+}
+
+.tooltip {
+  width: 250px;
+  background-color: #8b8b8b;
+  color: #f2f2f2;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 80%;
+  left: 55%;
+  margin-left: -60px;
 }
 
 /* combinator selectors, pseudo-selectors and more */
@@ -214,4 +254,15 @@ li a:after {
 li a:hover:after {
   transform: scaleX(1);
   /* transform-origin: bottom left; */
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #8b8b8b transparent transparent transparent;
 }

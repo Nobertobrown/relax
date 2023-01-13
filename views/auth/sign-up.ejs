@@ -10,34 +10,72 @@
   </header>
 
   <div class="main-container">
+    <% if(errorMessage){ %>
+      <div class="div--message"><%= errorMessage %></div>
+    <% } %>
     <div class="form-container">
-      <form action="/sign-up" class="form-style" method="post">
+      <form action="/sign-up" class="form-style" method="post" novalidate>
         <p class="top-right">Already a member? <a href="/login">Sign In</a></p>
         <h2>Sign Up to Relax</h2>
         <div class="row">
           <div class="column">
             <label for="name">Name</label>
-            <input type="text" name="name" id="name" />
+            <input
+            class="<%= validationErrors.find(err=>err.param === 'name') ? 'invalid' : '' %>" 
+            type="text" 
+            name="name" 
+            id="name" 
+            value="<%= oldInput.name %>" 
+            />
           </div>
           <div class="column">
             <label for="username">Username</label>
-            <input type="text" name="username" id="username" />
+            <input
+            class="<%= validationErrors.find(err=>err.param === 'username') ? 'invalid' : '' %>"  
+            type="text" 
+            name="username" 
+            id="username" 
+            value="<%= oldInput.username %>" 
+            />
           </div>
         </div>
 
         <div>
           <label for="email">E-mail</label>
-          <input type="email" name="email" id="email" />
+          <input
+          class="<%= validationErrors.find(err=>err.param === 'email') ? 'invalid' : '' %>"  
+          type="email" 
+          name="email" 
+          id="email" 
+          value="<%= oldInput.email %>" 
+          />
         </div>
 
         <div>
           <label for="password">Password</label>
           <input
+            class="<%= validationErrors.find(err=>err.param === 'password') ? 'invalid' : '' %>" 
             type="password"
             name="password"
             id="password"
             placeholder="6+ characters"
+            value="<%= oldInput.password %>"
           />
+        </div>
+
+        <div class="div--password--confirm">
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            class="<%= validationErrors.find(err=>err.param === 'confirmPassword') ? 'invalid' : '' %>" 
+            type="password"
+            name="confirmPassword"
+            id="confirmPassword"
+            placeholder="Repeat the password"
+            value="<%= oldInput.confirmPassword %>"
+          />
+          <!-- <% if(errorMessage){ %>
+            <span class="tooltip" id="errorTooltip"><%= errorMessage %></span>
+          <% } %> -->
         </div>
         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
         <button type="submit">Sign Up</button>
@@ -48,5 +86,7 @@
       <p>ⓒ 2022 noberto,Inc. All rights reserved</p>
     </div>
   </div>
+
+  <script src="/js/index.js"></script>
 </body>
 </html>

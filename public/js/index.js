@@ -19,3 +19,5 @@
 // list.innerHTML = listArray
 //   .map((element) => `<li id='${element}' class='listItem'>${element}</li>`)
 //   .join("");
+
+// document.querySelectorAll("#errorTooltip").classList.add(".hide");

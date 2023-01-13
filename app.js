@@ -10,6 +10,7 @@ const csrf = require("csurf");
 const flash = require("connect-flash");
 /******** importing routes *******/
 const userRoutes = require("./routes/routes");
+const authRoutes = require("./routes/authRoutes");
 const errorRoutes = require("./controllers/error");
 /******** importing sequelize instance *******/
 const sequelize = require("./util/database");
@@ -17,7 +18,8 @@ const sequelize = require("./util/database");
 const Record = require("./models/records");
 const User = require("./models/user");
 
-const app = express(); // initialization
+/********** initialization **********/
+const app = express();
 const csrfProtection = csrf();
 
 /******** defining middlewares *******/
@@ -43,7 +45,7 @@ app.use(
     secret: "hero108&ben10",
     resave: false,
     saveUninitialized: false,
-    cookie: { maxAge: 10 * 60 * 1000 },
+    cookie: { maxAge: 5 * 60 * 1000 },
   })
 );
 
@@ -51,26 +53,34 @@ app.use(csrfProtection);
 app.use(flash());
 
 app.use((req, res, next) => {
+  res.locals.csrfToken = req.csrfToken();
+  next();
+});
+
+app.use((req, res, next) => {
   if (!req.session.user) {
     return next();
   }
   User.findByPk(req.session.user.id)
     .then((user) => {
+      if (!user) {
+        return next();
+      }
       req.user = user;
       next();
     })
     .catch((err) => {
-      console.log(err);
+      next(new Error(err));
     });
 });
 
-app.use((req, res, next) => {
-  res.locals.csrfToken = req.csrfToken();
-  next();
-});
-
 app.use(userRoutes);
+app.use(authRoutes);
+app.get("/500", errorRoutes.get500);
 app.use(errorRoutes.get404);
+app.use((error, req, res, next) => {
+  res.status(500).render("500", { pageTitle: "Internal Server Error" });
+});
 
 /******** defining associations *******/
 Record.belongsTo(User, {
