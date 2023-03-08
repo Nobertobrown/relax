@@ -101,3 +101,7 @@ sequelize
   .catch((err) => {
     console.log(err);
   });
+
+
+  // TODO
+  // Add a profile picture setting
