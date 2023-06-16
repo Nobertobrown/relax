@@ -5,13 +5,15 @@ const { validationResult } = require("express-validator");
 // const nodemailer = require("nodemailer");
 // const sendGrid = require("nodemailer-sendgrid-transport");
 const crypto = require("crypto");
-const { nextTick } = require("process");
+const { nextTick } = require("process"); 
+const dotenv = require('dotenv');
+dotenv.config();
 
 // const transporter = nodemailer.createTransport(
 //   sendGrid({
 //     auth: {
 //       api_key:
-//         "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",
+//         process.env.SENDGRID_API_KEY,
 //     },
 //   })
 // );
@@ -267,5 +269,3 @@ exports.postNewPassword = (req, res, next) => {
       return next(error);
     });
 };
-
-/* API_KEY=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 */
