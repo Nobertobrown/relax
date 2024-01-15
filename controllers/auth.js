@@ -5,13 +5,15 @@ const { validationResult } = require("express-validator");
 // const nodemailer = require("nodemailer");
 // const sendGrid = require("nodemailer-sendgrid-transport");
 const crypto = require("crypto");
-const { nextTick } = require("process");
+const { nextTick } = require("process"); 
+const dotenv = require('dotenv');
+dotenv.config();
 
 // const transporter = nodemailer.createTransport(
 //   sendGrid({
 //     auth: {
 //       api_key:
-//         "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",
+//         process.env.SENDGRID_API_KEY,
 //     },
 //   })
 // );
@@ -165,7 +167,7 @@ exports.postLoginPage = (req, res, next) => {
             req.session.isLoggedIn = true;
             req.session.user = user;
             return req.session.save((err) => {
-              console.log("Session Update Error:", err);
+              console.log(err);
               res.redirect("/");
             });
           }
@@ -173,7 +175,7 @@ exports.postLoginPage = (req, res, next) => {
           res.redirect("/login");
         })
         .catch((err) => {
-          console.log("Bcrypt Error:", err);
+          console.log(err);
           res.redirect("/login");
         });
     })
@@ -267,5 +269,3 @@ exports.postNewPassword = (req, res, next) => {
       return next(error);
     });
 };
-
-/* API_KEY=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 */
