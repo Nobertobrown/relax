@@ -1,0 +1,34 @@
+<%- include('../includes/header') -%>
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 id="brand">Relax</h1>
+      <ul class="links">
+        <li><a href="/records">My Records</a></li>
+        <li>
+          <form action="/landing" id="signOutForm" method="post">
+            <a
+              onclick="document.getElementById('signOutForm').submit()"
+              >Sign Out</a
+            >
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          </form>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <div class="container-1">
+      <button class="pain emot" onclick="location.href='/pain'">PAIN</button>
+      <img src="/images/question-mark.png" alt="question" class="question" />
+      <button class="joy emot" onclick="location.href='/joy'">JOY</button>
+    </div>
+
+    <div class="copyright-info">
+      <p>ⓒ 2022 noberto,Inc. All rights reserved</p>
+    </div>
+  </div>
+</body>
+</html>

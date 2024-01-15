@@ -1,0 +1,60 @@
+<%- include('../includes/header') -%>
+<link rel="stylesheet" href="/css/form.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 id="brand">Relax</h1>
+      <ul class="links">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <div class="container-1 records-container-1">
+      <div class="records pain">
+        <div><h1>Pains</h1></div>
+        <% painList.forEach((pain)=>{ %>
+        <h3><%= pain.title %></h3>
+        <p><%= pain.description %></p>
+        <button onclick="location.href='/edit-pain/<%= pain.id %>?edit=true'">
+          <i class="fa-solid fa-pen-to-square"></i>
+          Edit
+        </button>
+        <form action="/delete-record" class="delete-form" method="post">
+          <input type="hidden" name="recordId" value="<%= pain.id %>" />
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button type="submit"><i class="fa-solid fa-trash"></i> Delete</button>
+        </form>
+        <% }) %>
+        <button class="add-pain" onclick="location.href='/pain'">Add</button>
+      </div>
+
+      <div class="records joy">
+        <div><h1>Joys</h1></div>
+        <% joyList.forEach((joy)=>{ %>
+        <h3><%= joy.title %></h3>
+        <p><%= joy.description %></p>
+        <button onclick="location.href='/edit-joy/<%= joy.id %>?edit=true'">
+          <i class="fa-solid fa-pen-to-square"></i>
+          Edit
+        </button>
+        <form action="/delete-record" class="delete-form" method="post">
+          <input type="hidden" name="recordId" value="<%= joy.id %>" />
+          <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+          <button type="submit"><i class="fa-solid fa-trash"></i> Delete</button>
+        </form>
+        <% }) %>
+        <button class="add-joy" onclick="location.href='/joy'">Add</button>
+      </div>
+    </div>
+
+    <div class="copyright-info">
+      <p>ⓒ 2022 noberto,Inc. All rights reserved</p>
+    </div>
+  </div>
+
+  <script src="/js/index.js"></script>
+</body>
+</html>

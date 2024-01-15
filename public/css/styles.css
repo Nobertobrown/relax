@@ -1,0 +1,268 @@
+/* general selectors */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -ms-overflow-style: none; /* for Internet Explorer, Edge */
+  scrollbar-width: none; /* for Firefox*/
+}
+
+*::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari and Opera */
+}
+
+html {
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  background-color: #f2ea7e;
+  background-image: url("https://transparenttextures.com/patterns/skulls.png");
+}
+
+nav {
+  background-color: #26a653;
+  color: #f2f2f2;
+  padding: 2% 15% 1%;
+  box-shadow: 0 0 10px 0 #0000004d;
+  display: flex;
+  align-items: center;
+  flex: 1 1;
+}
+
+a {
+  text-decoration: none;
+  color: #f2f2f2;
+  font-size: 1rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+i.fa-trash{
+  color: red;
+}
+
+/* id selectors */
+#brand {
+  display: inline-block;
+  font-size: 2rem;
+  width: auto;
+  margin-bottom: 5px;
+  margin-right: auto;
+}
+
+#joy-extra-color {
+  background-color: #f5bf0d;
+}
+
+#signOutForm {
+  cursor: pointer;
+}
+
+/* class selectors */
+.links {
+  display: flex;
+}
+
+.main-container {
+  display: flex;
+  padding: 0 15%;
+  flex-flow: column;
+  height: 100%;
+}
+
+.container-1 {
+  display: flex;
+  padding: 5%;
+  justify-content: center;
+  align-items: center;
+}
+
+.records-container-1 {
+  align-items: stretch;
+  /* justify-content: space-evenly; */
+}
+
+.emot {
+  text-align: center;
+  padding: 15%;
+  border: none;
+  border-radius: 10%;
+  margin: 20px;
+  color: #f2f2f2;
+  font-weight: bolder;
+  font-size: large;
+  cursor: pointer;
+  box-shadow: 1px 1px 4px #0000004d;
+}
+
+.pain {
+  background-color: #26a653;
+  flex: 0 1 auto;
+}
+
+.question {
+  width: 50px;
+  height: 50px;
+  flex: 0 1 auto;
+}
+
+.joy {
+  background-color: #f5bf0d;
+  flex: 0 1 auto;
+}
+
+.copyright-info {
+  padding: 2% 10%;
+  text-align: center;
+  color: #8b8b8b;
+  font-size: 1rem;
+}
+
+.top-nav-info {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 0.5rem;
+}
+
+.date-time {
+  margin-left: auto;
+  color: #f2f2f2;
+}
+
+.records {
+  /* display: flex;
+  flex-flow: column; */
+  /* border-radius: 7px; */
+  position: relative;
+  padding: 10%;
+  color: #f2f2f2;
+}
+
+.add-pain {
+  position: absolute;
+  right: 18px;
+  color: #f2f2f2;
+  background-color: #26a653;
+}
+
+.add-joy {
+  position: absolute;
+  right: 18px;
+  color: #f2f2f2;
+  background-color: #f5bf0d;
+}
+
+.o4 {
+  font-weight: bold;
+  font-size: 2rem;
+  padding-top: 5%;
+  padding-bottom: 35%;
+  color: #000000;
+}
+
+.o5 {
+  font-weight: bold;
+  font-size: 1rem;
+  padding-top: 5%;
+  padding-bottom: 35%;
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}
+
+.o5 a{
+  color: #8b8b8b;
+}
+
+.o5 a:hover{
+  color: #26a653;
+}
+
+.div--message {
+  padding: 1rem;
+  border: 1px solid #26a653;
+  background-color: #26a653b7;
+  margin: auto;
+  border-radius: 7px;
+}
+
+.div--message--error {
+  border-color: red;
+  background-color: #ff0000a2;
+}
+
+.div--password--confirm {
+  position: relative;
+}
+
+.tooltip {
+  width: 250px;
+  background-color: #8b8b8b;
+  color: #f2f2f2;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 80%;
+  left: 55%;
+  margin-left: -60px;
+}
+
+/* combinator selectors, pseudo-selectors and more */
+button:hover {
+  opacity: 90%;
+  box-shadow: 0 1px 1px #0000004d;
+}
+
+button:active {
+  opacity: 100%;
+  box-shadow: none;
+}
+
+nav ul {
+  list-style: none;
+  gap: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+li a {
+  position: relative;
+}
+
+a:hover {
+  color: #f2ea7e;
+}
+
+li a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f2ea7e;
+  /* transform-origin: bottom right; */
+  transition: transform 0.25s ease-out;
+}
+
+li a:hover:after {
+  transform: scaleX(1);
+  /* transform-origin: bottom left; */
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #8b8b8b transparent transparent transparent;
+}

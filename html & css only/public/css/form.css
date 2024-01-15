@@ -1,0 +1,170 @@
+/* joy & pain forms */
+form.form-control {
+  position: relative;
+  width: 70%;
+  margin: 30px auto 20px auto;
+  background: #f2f2f2;
+  padding: 15px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px #8a8989;
+}
+form.form-control input,
+form.form-control textarea {
+  width: 100%;
+  border: none;
+  padding: 9px;
+  outline: none;
+  font-size: 1.2rem;
+  font-family: inherit;
+  resize: none;
+  background-color: #f2f2f2;
+}
+
+form.form-control input {
+  margin-bottom: 2px;
+}
+
+form.form-control input:focus,
+form.form-control textarea:focus {
+  z-index: 1;
+  box-shadow: 1px 1px 3px #00000017;
+}
+
+form.form-control button,
+.add-pain,
+.add-joy {
+  bottom: 8px;
+  border: none;
+  border-radius: 10%;
+  height: 36px;
+  width: 66px;
+  box-shadow: 2px 2px 4px #0000004d;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+}
+
+.form-buttons {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+form.form-control button[type="submit"] {
+  margin-left: 5px;
+  color: #ffffff;
+  background-color: #26a653;
+}
+
+form.form-control button[type="reset"] {
+  color: #8b8b8b;
+  background: #ffffff;
+}
+form.form-control button:hover {
+  box-shadow: 1px 1px 2px #0000004d;
+}
+
+form.form-control button:active {
+  box-shadow: none;
+}
+
+/* login and sign-up forms */
+form.form-style {
+  background-image: repeating-linear-gradient(
+    to bottom right,
+    rgb(38, 166, 83, 0.5),
+    rgb(245, 191, 15, 0.6),
+    rgb(245, 191, 15, 0.1)
+  );
+  margin: 10px auto 20px auto;
+  width: 45%;
+  height: 480px;
+  padding: 25px 30px;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px #8a8989;
+  display: flex;
+  flex-flow: column;
+  gap: 1.6rem;
+  flex: 0 1 430px;
+}
+
+form.form-style label {
+  font-size: 1rem;
+}
+
+form.form-style input {
+  width: 100%;
+  border: none;
+  padding: 9px;
+  outline: none;
+  font-size: 1rem;
+  line-height: 1.2rem;
+  font-family: inherit;
+  resize: none;
+  background-color: #f2f2f2;
+  border-radius: 7px;
+}
+
+form.form-style input:focus {
+  /* outline: 1px solid #26a653; */
+  box-shadow: 1px 0 5px #26a653;
+}
+
+form a {
+  color: #26a653;
+}
+
+form.form-style button {
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  height: 36px;
+  width: 30%;
+  box-shadow: 2px 2px 4px #0000004d;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  background-color: #26a653;
+  font-size: 1rem;
+}
+
+form.form-style button:hover {
+  box-shadow: 1px 1px 1px #0000004d;
+}
+
+form.form-style button:active {
+  box-shadow: none;
+}
+
+.top-right {
+  margin-left: auto;
+  color: #8b8b8b;
+  font-size: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 0.6rem;
+}
+
+.row div {
+  flex: 1 180px;
+}
+
+.column {
+  display: flex;
+  flex-flow: column;
+}
+
+.form-container {
+  display: flex;
+}
+
+/* login-form */
+.inner-column {
+  display: flex;
+  flex-flow: column;
+  gap: 1rem;
+}

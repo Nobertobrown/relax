@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Relax:Joy</title>
+    <link rel="stylesheet" href="../public/css/styles.css" />
+    <link rel="stylesheet" href="../public/css/form.css" />
+  </head>
+  <body>
+    <header>
+      <nav id="joy-extra-color">
+        <h1 id="brand">Joy</h1>
+        <div class="top-nav-info">
+          <div class="date-time"><em>Date...</em></div>
+          <q
+            ><em
+              >...Find out where joy resides, and give it a voice far beyond
+              singing. For to miss the joy is to miss all.</em
+            ></q
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div>
+        <form action="/records/joy" method="post" class="form-control">
+          <input type="text" name="title" placeholder="What's on your mind?" />
+          <textarea
+            name="description"
+            cols="30"
+            rows="10"
+            placeholder="Tell me more..."
+          >
+          </textarea>
+          <div class="form-buttons">
+            <button type="submit" id="joy-extra-color">Keep</button>
+            <button type="reset">Discard</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

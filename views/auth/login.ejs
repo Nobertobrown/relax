@@ -1,0 +1,54 @@
+<%- include('../includes/header') -%>
+<link rel="stylesheet" href="/css/form.css" />
+<link rel="stylesheet" href="/css/home.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <h1 id="brand">Relax</h1>
+    </nav>
+  </header>
+
+  <div class="main-container">
+    <% if(errorMessage){ %>
+      <div class="div--message div--message--error"><%= errorMessage %></div>
+    <% } %>
+    <div class="form-container">
+      <form action="/login" class="form-style" method="post">
+        <p class="top-right">
+          Not a member? <a href="/sign-up">Sign up now</a>
+        </p>
+        <h2>Sign In to Relax</h2>
+        <div class="inner-column">
+          <div>
+            <label for="username">Username or Email Address</label>
+            <input 
+            type="text" 
+            name="username" 
+            id="username" 
+            />
+          </div>
+
+          <div>
+            <label for="password">Password</label>
+            <input 
+            type="password" 
+            name="password" id="password" 
+            />
+          </div>
+
+          <div class="div-btn--reset">
+            <a href="/reset-password">Forgot Password?</a>
+          </div>
+        </div>
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+
+    <div class="copyright-info">
+      <p>ⓒ 2022 noberto,Inc. All rights reserved</p>
+    </div>
+  </div>
+</body>
+</html>
