@@ -90,8 +90,8 @@ User.hasMany(Record);
 
 /******** synching data with database *******/
 sequelize
-  .sync({ force: true })
-  // .sync()
+  // .sync({ force: true })
+  .sync()
   .then((result) => {
     app.listen(3000, () => {
       console.log("Server started on port 3000");

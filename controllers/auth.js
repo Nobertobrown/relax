@@ -5,9 +5,7 @@ const { validationResult } = require("express-validator");
 // const nodemailer = require("nodemailer");
 // const sendGrid = require("nodemailer-sendgrid-transport");
 const crypto = require("crypto");
-const { nextTick } = require("process"); 
-const dotenv = require('dotenv');
-dotenv.config();
+require('dotenv').config();
 
 // const transporter = nodemailer.createTransport(
 //   sendGrid({
